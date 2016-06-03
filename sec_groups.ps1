@@ -26,6 +26,9 @@ param(
 
 $toadd = @()
 
+#This was a check to see if we were given a path reference to a drive (we used the Y:\ for the file root)
+#This strips the driver reference and appends the given path to the shared root
+
 if($path[0] -like "Y"){
     $path = $path.split(":")[1]
     $path = "<path root every share uses>$path"
